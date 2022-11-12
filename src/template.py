@@ -21,6 +21,9 @@ print("bot executing..")
 async def on_ready():
     #sets a status to the bot
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="You"))
+    #syncs slash commands
+    synced = await bot.tree.sync()
+    print(f"slash commands total -> {len(synced)}...")
 
 @bot.command(invoke_without_command=True)
 #checks if the command sender has administrator permissions
@@ -28,6 +31,11 @@ async def on_ready():
 async def hey(ctx):
     #gets channel name from ctx (where !hey was executed) and sends a message
     await ctx.send("Hello!")
+
+@bot.tree.command(name="latency", description="shows the bot latency")
+async def latency(interaction: discord.Interaction):
+  #ephemeral=True - shows the message to the command sender only
+  await interaction.response.send_message(f"`[latency] bot status: {round(bot.latency * 1000)}ms`", ephemeral=True)
 
 #runs the bot
 bot.run(TOKEN)

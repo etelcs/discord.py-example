@@ -32,6 +32,7 @@ async def hey(ctx):
     #gets channel name from ctx (where !hey was executed) and sends a message
     await ctx.send("Hello!")
 
+#slash-command
 @bot.tree.command(name="latency", description="shows the bot latency")
 async def latency(interaction: discord.Interaction):
   #ephemeral=True - shows the message to the command sender only

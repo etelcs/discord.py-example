@@ -7,7 +7,7 @@ from discord.ext.commands import has_permissions
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 #gets file called template.json
-with open('template.json', 'r') as f:
+with open('fun.json', 'r') as f:
     settings = json.loads(f.read())
     #gets token value from template.json
     TOKEN = settings['TOKEN']

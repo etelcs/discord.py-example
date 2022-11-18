@@ -1,2 +1,1 @@
-# discordpy-template
-discord.py bot template
+simple discord.py bot

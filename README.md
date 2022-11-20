@@ -1,1 +1,4 @@
-simple discord.py bot
+```
+discord.py bot
+with or without cogs!
+```
